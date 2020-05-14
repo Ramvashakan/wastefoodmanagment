@@ -1,3 +1,4 @@
+import { HotelPage } from './../hotel/hotel';
 import { SignupPage } from './../signup/signup';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -14,8 +15,12 @@ export class HomePage {
 
   signup(){
 
-    this.navCtrl.push(SignupPage)
+    this.navCtrl.push(SignupPage);
 
+  }
+
+  login(){
+    this.navCtrl.push(HotelPage);
   }
 
 }

@@ -1,5 +1,11 @@
 page-signup {
 
+    .heading{
+        font-size: 18px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
     .signup_input{
 
         margin-top: 60px;
@@ -12,10 +18,39 @@ page-signup {
     }
 
     .radio{
-        margin-top: 30px;
+        margin-top: 50px;
         font-size: 30px !important;
     }
 
+    .list_head{
+        //margin-top: 20px;
+        border-top: none;
+        font-size: 18px;
+    }
+
+    .bn_create{
+
+        min-width: 80px;
+        min-height: 50px;
+        font-size: 15px !important;
+        
+    }
+
+    .create{
+
+        margin-top: 30px !important;
+        min-width: 80px;
+        min-height: 50px;
+
+    }
+
+    .segment{
+
+        
+        font-size: 20px;
+    
+
+    }
    
 
 }

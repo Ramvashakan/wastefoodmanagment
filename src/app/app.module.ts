@@ -1,3 +1,5 @@
+import { AsramamPage } from './../pages/asramam/asramam';
+import { HotelPage } from './../pages/hotel/hotel';
 import { SignupPage } from './../pages/signup/signup';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -11,7 +13,7 @@ import { HomePage } from '../pages/home/home';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,SignupPage
+    HomePage,SignupPage,HotelPage,AsramamPage
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,7 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,SignupPage
+    HomePage,SignupPage,HotelPage,AsramamPage
   ],
   providers: [
     StatusBar,

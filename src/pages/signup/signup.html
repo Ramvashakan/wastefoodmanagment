@@ -7,34 +7,97 @@
 
 <ion-content padding>
 
-  <ion-item class="signup_input">
+  <div padding>
+    <ion-segment [(ngModel)]="selector">
+      <ion-segment-button  value="asramam">
+        Asramam
+      </ion-segment-button>
+      <ion-segment-button  value="hotel">
+        Hotel
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 
-    <ion-input type="email" placeholder="Enter the email"></ion-input>
+  <div [ngSwitch] = "selector">
 
-  </ion-item>
+    <ion-list *ngSwitchCase= "'asramam'" > 
 
-  <ion-item>
+      <ion-label class="heading"> Sign Up as Asramam</ion-label>
 
-    <ion-input type="password" placeholder="Enter the password"></ion-input>
+      <ion-item class="signup_input">
 
-  </ion-item>
+        <ion-input type="text" placeholder="Enter the Asramam Name"></ion-input>
+    
+      </ion-item>
+    
+      <ion-item >
 
+        <ion-input type="email" placeholder="Enter the email"></ion-input>
+    
+      </ion-item>
+    
+      <ion-item>
+    
+        <ion-input type="password" placeholder="Enter the password"></ion-input>
+    
+      </ion-item>
+
+      <ion-item>
+    
+        <ion-input type="phone" placeholder="Enter the mobile number"></ion-input>
+    
+      </ion-item>
+    
+    
+      <ion-item no-lines class="create">
+      <button class="bn_create" item-start ion-button >Create Account</button>
+      <button class="bn_create" item-end ion-button >Back to login</button>
+      </ion-item>
+
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase= "'hotel'" > 
+
+      <ion-label class="heading"> Sign Up as Hotel</ion-label>
+
+      <ion-item class="signup_input">
+
+        <ion-input type="text" placeholder="Enter the Hotel Name"></ion-input>
+    
+      </ion-item>
+
+      <ion-item>
+
+        <ion-input type="email" placeholder="Enter the email"></ion-input>
+    
+      </ion-item>
+    
+      <ion-item>
+    
+        <ion-input type="password" placeholder="Enter the password"></ion-input>
+    
+      </ion-item>
+
+      <ion-item>
+    
+        <ion-input type="phone" placeholder="Enter the mobile number"></ion-input>
+    
+      </ion-item>
+    
+    
+      <ion-item no-lines class="create">
+      <button class="bn_create"  item-start ion-button >Create Account</button>
+      <button class="bn_create" item-end ion-button >Back to login</button>
+      </ion-item>
+
+    </ion-list>
+
+  </div>
+  
  
 
-    <ion-list class="radio" radio-group>
-      <ion-list-header style="font-size: 18px;">
-        Select one of them
-      </ion-list-header>
-    
-      <ion-item>
-        <ion-label>Asramam</ion-label>
-        <ion-radio  value="asramam"></ion-radio>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label>Hotel</ion-label>
-        <ion-radio value="hotel"></ion-radio>
-      </ion-item>
-</ion-list>
 
 </ion-content>
+
+

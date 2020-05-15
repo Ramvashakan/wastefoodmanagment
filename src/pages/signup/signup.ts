@@ -17,8 +17,7 @@ import { Observable } from 'rxjs';
 export class SignupPage {
 
   selector:any;
-  as_mobile:any;
-  as_name:any;
+  
   as_email:any;
   as_password:any;
   mobile_phn:any;
@@ -156,28 +155,6 @@ asramam_create(){
     alert.present();  
   }
 
-  else if( this.as_name == null){
-    let alert = this.AlrtCtrl.create({
-
-      title: 'Error',
-      message:'Enter the valid Hotel Name',
-      buttons:['OK']
-    });
-
-    alert.present();  
-  }
-
-  else if(this.as_mobile ==null){
-
-    let alert = this.AlrtCtrl.create({
-
-      title: 'Error',
-      message:'Enter the valid Mobile number',
-      buttons:['OK']
-    });
-
-    alert.present();  
-  }
 
   else{
 

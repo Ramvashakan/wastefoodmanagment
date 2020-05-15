@@ -30,7 +30,7 @@ export class HoteldetailsPage {
     public AD: AngularFireDatabase
     ){
     let a = this.AF.auth.currentUser.uid;
-      this.tasksRef = AD.list(a);
+      this.tasksRef = AD.list('Hotels/'+a);
        this.tasks = this.tasksRef.snapshotChanges().pipe(
        map(changes => 
        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
@@ -80,13 +80,14 @@ export class HoteldetailsPage {
         buttons:[{
 
           text:'Ok',
-          handler:()=>{
+          handler:() => {
 
             this.navCtrl.push(HomePage);
 
           }
         }]
       });
+      alrt.present();
     }
   }
 }

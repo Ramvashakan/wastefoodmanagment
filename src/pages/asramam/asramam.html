@@ -1,0 +1,75 @@
+<ion-content padding>
+
+   <ion-label class="heading">Donations Available</ion-label>
+   
+   <div>
+
+    <div padding>
+      <ion-segment [(ngModel)]="types">
+
+        <ion-segment-button value="food">
+          Food
+        </ion-segment-button>
+        
+        <ion-segment-button value="cloths">
+          Cloths
+        </ion-segment-button>
+      
+      <ion-segment-button value="books">
+        Books
+      </ion-segment-button>
+
+    </ion-segment>
+    </div>
+    
+    <div [ngSwitch]="types">
+      
+      <ion-list *ngSwitchCase="'food'">
+       
+        <div class="form" padding>
+        
+            <ion-list no-lines>
+                <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+                  {{ item }}
+                </button>  
+              </ion-list>
+
+    
+        </div>
+      
+        
+      </ion-list>
+    
+      <ion-list *ngSwitchCase="'cloths'">
+        <div class="form" padding>
+         
+                <ion-list no-lines>
+                    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+                      {{ item }}
+                    </button>  
+                  </ion-list>
+      
+        </div>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'books'">
+
+        <div class="form" padding>
+          
+                <ion-list no-lines>
+                    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+                      {{ item }}
+                    </button>  
+                  </ion-list>
+      
+        </div>
+
+
+      </ion-list>
+
+    </div>
+
+  </div>
+
+
+</ion-content>

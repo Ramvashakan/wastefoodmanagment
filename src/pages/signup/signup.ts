@@ -2,12 +2,7 @@ import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the SignupPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import{ AngularFireAuth } from 'angularfire2/auth';
 
 @IonicPage()
 @Component({
@@ -17,8 +12,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class SignupPage {
 
   selector:any;
+  hotel_name:any;
+  email:any;
+  password:any;
+  mobile_phn:any;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    
+    public AF:AngularFireAuth
+    
+    ) {
   }
 
   ionViewDidLoad() {
@@ -31,7 +34,20 @@ export class SignupPage {
   }
 
   hotel(){
+
     
+  }
+
+  create(){
+
+    
+
+  }
+
+  login(){
+
+    this.navCtrl.pop();
+
   }
 
 

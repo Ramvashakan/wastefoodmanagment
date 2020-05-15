@@ -63,32 +63,32 @@
 
       <ion-item class="signup_input">
 
-        <ion-input type="text" placeholder="Enter the Hotel Name"></ion-input>
+        <ion-input [(ngModel)] = "hotel_name" type="text" placeholder="Enter the Hotel Name"></ion-input>
     
       </ion-item>
 
       <ion-item>
 
-        <ion-input type="email" placeholder="Enter the email"></ion-input>
+        <ion-input type="email" [(ngModel)] = "email" placeholder="Enter the email"></ion-input>
     
       </ion-item>
     
       <ion-item>
     
-        <ion-input type="password" placeholder="Enter the password"></ion-input>
+        <ion-input type="password" [(ngModel)] = "password" placeholder="Enter the password"></ion-input>
     
       </ion-item>
 
       <ion-item>
     
-        <ion-input type="phone" placeholder="Enter the mobile number"></ion-input>
+        <ion-input type="phone" [(ngModel)] = "mobile_phn" placeholder="Enter the mobile number"></ion-input>
     
       </ion-item>
     
     
       <ion-item no-lines class="create">
-      <button class="bn_create"  item-start ion-button >Create Account</button>
-      <button class="bn_create" item-end ion-button >Back to login</button>
+      <button class="bn_create" (click)="create()"  item-start ion-button >Create Account</button>
+      <button class="bn_create" (click)="login()" item-end ion-button >Back to login</button>
       </ion-item>
 
     </ion-list>

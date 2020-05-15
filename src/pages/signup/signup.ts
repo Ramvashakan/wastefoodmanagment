@@ -1,3 +1,4 @@
+import { AngularFireDatabase } from 'angularfire2/database';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController,LoadingController } from 'ionic-angular';
@@ -15,24 +16,36 @@ export class SignupPage {
   hotel_name:any;
   email:any;
   password:any;
+  as_mobile:any;
+  as_name:any;
+  as_email:any;
+  as_password:any;
   mobile_phn:any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams,
     
     public AF:AngularFireAuth,
     public AlrtCtrl:AlertController,
-    public Loading:LoadingController
-    ) {
-  }
+    public Loading:LoadingController,
+    public AD: AngularFireDatabase
+    ){ }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
+  }
+
+  login(){
+
+    this.navCtrl.pop();
+
   }
 
   asramam(){
 
     this.navCtrl.push(HomePage)
   }
+
+/*.................................SIGNUP HOTEL...............................*/
 
 
   create_hotel(){
@@ -123,14 +136,100 @@ export class SignupPage {
       alert.present();  
     });
   }
+}
 
+/*....................................SIGNUP ASRAMAM.......................................*/
+
+asramam_create(){
+
+  if(this.as_email == null ){
+
+    let alert = this.AlrtCtrl.create({
+
+      title: 'Error',
+      message:'Enter the valid email',
+      buttons:['OK']
+    });
+
+    alert.present();  
   }
 
-  login(){
+  else if(this.as_password == null){
 
-    this.navCtrl.pop();
+    let alert = this.AlrtCtrl.create({
 
+      title: 'Error',
+      message:'Enter the valid Password',
+      buttons:['OK']
+    });
+
+    alert.present();  
   }
 
+  else if( this.as_name == null){
+    let alert = this.AlrtCtrl.create({
+
+      title: 'Error',
+      message:'Enter the valid Hotel Name',
+      buttons:['OK']
+    });
+
+    alert.present();  
+  }
+
+  else if(this.as_mobile ==null){
+
+    let alert = this.AlrtCtrl.create({
+
+      title: 'Error',
+      message:'Enter the valid Mobile number',
+      buttons:['OK']
+    });
+
+    alert.present();  
+  }
+
+  else{
+
+  this.AF.auth.createUserWithEmailAndPassword(this.as_email,this.as_password).then(result =>{
+
+    console.log(result);
+
+   let alert = this.AlrtCtrl.create({
+
+      title: 'Success',
+      message:'Account created Successfull',
+      buttons:[{
+        text:'OK',
+        handler: () =>{
+
+          let load = this.Loading.create({
+            spinner:'ios',
+            dismissOnPageChange:true,
+            content:'loading'
+          });
+          load.present();
+          this.navCtrl.push(HomePage);
+          
+        }
+      }]
+    });
+
+    alert.present();
+  }).catch(err =>{
+
+    let alert = this.AlrtCtrl.create({
+
+      title: 'Error',
+      message:err,
+      buttons:['OK']
+    });
+
+    alert.present();  
+  });
+}
+
+
+}
 
 }

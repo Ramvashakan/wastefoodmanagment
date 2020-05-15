@@ -26,32 +26,32 @@
 
       <ion-item class="signup_input">
 
-        <ion-input type="text" placeholder="Enter the Asramam Name"></ion-input>
+        <ion-input type="text" [(ngModel)] = "as_name" placeholder="Enter the Asramam Name"></ion-input>
     
       </ion-item>
     
       <ion-item >
 
-        <ion-input type="email" placeholder="Enter the email"></ion-input>
+        <ion-input [(ngModel)] = "as_email" type="email" placeholder="Enter the email"></ion-input>
     
       </ion-item>
     
       <ion-item>
     
-        <ion-input type="password" placeholder="Enter the password"></ion-input>
+        <ion-input type="password" [(ngModel)] ="as_password" placeholder="Enter the password"></ion-input>
     
       </ion-item>
 
       <ion-item>
     
-        <ion-input type="phone" placeholder="Enter the mobile number"></ion-input>
+        <ion-input type="phone" [(ngModel)] ="as_mobile" placeholder="Enter the mobile number"></ion-input>
     
       </ion-item>
     
     
       <ion-item no-lines class="create">
-      <button class="bn_create" item-start ion-button >Create Account</button>
-      <button class="bn_create" item-end ion-button >Back to login</button>
+      <button class="bn_create" (click)="asramam_create()" item-start ion-button >Create Account</button>
+      <button class="bn_create" (click)="login()" item-end ion-button >Back to login</button>
       </ion-item>
 
     </ion-list>

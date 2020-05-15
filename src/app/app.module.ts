@@ -6,8 +6,11 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule,AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabaseModule,AngularFireDatabase } from 'angularfire2/database';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { firebaseConfig } from './config';
@@ -21,7 +24,8 @@ import { firebaseConfig } from './config';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,7 +34,7 @@ import { firebaseConfig } from './config';
   ],
   providers: [
     StatusBar,
-    SplashScreen,AngularFireAuth,
+    SplashScreen,AngularFireAuth,AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

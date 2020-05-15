@@ -1,9 +1,12 @@
-import { AngularFireDatabase } from 'angularfire2/database';
+import { HoteldetailsPage } from './../hoteldetails/hoteldetails';
+import { AngularFireDatabase,AngularFireList } from 'angularfire2/database';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController,LoadingController } from 'ionic-angular';
 
 import{ AngularFireAuth } from 'angularfire2/auth';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @IonicPage()
 @Component({
@@ -21,6 +24,8 @@ export class SignupPage {
   as_email:any;
   as_password:any;
   mobile_phn:any;
+  tasksRef: AngularFireList<any>;
+  tasks: Observable<any[]>;
   
   constructor(public navCtrl: NavController, public navParams: NavParams,
     
@@ -28,7 +33,19 @@ export class SignupPage {
     public AlrtCtrl:AlertController,
     public Loading:LoadingController,
     public AD: AngularFireDatabase
-    ){ }
+    ){
+      
+      let a = 'hotel/';
+      this.tasksRef = AD.list(a);
+
+       this.tasks = this.tasksRef.snapshotChanges().pipe(
+       map(changes => 
+       changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+     )
+   );
+      
+
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
@@ -101,8 +118,6 @@ export class SignupPage {
 
     this.AF.auth.createUserWithEmailAndPassword(this.email,this.password).then(result =>{
 
-      console.log(result);
-
      let alert = this.AlrtCtrl.create({
 
         title: 'Success',
@@ -117,11 +132,16 @@ export class SignupPage {
               content:'loading'
             });
             load.present();
-            this.navCtrl.push(HomePage);
+            this.navCtrl.push(HoteldetailsPage);
             
           }
         }]
       });
+
+      this.tasksRef.push(this.hotel_name);
+      this.tasksRef.push(this.email);
+      this.tasksRef.push(this.mobile_phn);
+
 
       alert.present();
     }).catch(err =>{

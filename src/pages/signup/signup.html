@@ -61,11 +61,6 @@
 
       <ion-label class="heading"> Sign Up as Hotel</ion-label>
 
-      <ion-item class="signup_input">
-
-        <ion-input [(ngModel)] = "hotel_name" type="text" placeholder="Enter the Hotel Name"></ion-input>
-    
-      </ion-item>
 
       <ion-item>
 
@@ -79,13 +74,6 @@
     
       </ion-item>
 
-      <ion-item>
-    
-        <ion-input type="phone" [(ngModel)] = "mobile_phn" placeholder="Enter the mobile number"></ion-input>
-    
-      </ion-item>
-    
-    
       <ion-item no-lines class="create">
       <button class="bn_create" (click)="create_hotel()"  item-start ion-button >Create Account</button>
       <button class="bn_create" (click)="login()" item-end ion-button >Back to login</button>

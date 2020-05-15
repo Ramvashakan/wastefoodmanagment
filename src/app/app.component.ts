@@ -1,3 +1,4 @@
+import { HoteldetailsPage } from './../pages/hoteldetails/hoteldetails';
 import { HomePage } from './../pages/home/home';
 import { AsramamPage } from './../pages/asramam/asramam';
 import { HotelPage } from './../pages/hotel/hotel';

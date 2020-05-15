@@ -1,3 +1,4 @@
+import { AsramamdetailsPage } from './../asramamdetails/asramamdetails';
 import { HoteldetailsPage } from './../hoteldetails/hoteldetails';
 import { AngularFireDatabase,AngularFireList } from 'angularfire2/database';
 import { HomePage } from './../home/home';
@@ -16,16 +17,14 @@ import { Observable } from 'rxjs';
 export class SignupPage {
 
   selector:any;
-  hotel_name:any;
-  email:any;
-  password:any;
   as_mobile:any;
   as_name:any;
   as_email:any;
   as_password:any;
   mobile_phn:any;
-  tasksRef: AngularFireList<any>;
-  tasks: Observable<any[]>;
+  password:any;
+  email:any;
+  
   
   constructor(public navCtrl: NavController, public navParams: NavParams,
     
@@ -35,14 +34,7 @@ export class SignupPage {
     public AD: AngularFireDatabase
     ){
       
-      let a = 'hotel/';
-      this.tasksRef = AD.list(a);
-
-       this.tasks = this.tasksRef.snapshotChanges().pipe(
-       map(changes => 
-       changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-     )
-   );
+      
       
 
     }
@@ -91,29 +83,7 @@ export class SignupPage {
       alert.present();  
     }
 
-    else if( this.hotel_name == null){
-      let alert = this.AlrtCtrl.create({
-
-        title: 'Error',
-        message:'Enter the valid Hotel Name',
-        buttons:['OK']
-      });
-
-      alert.present();  
-    }
-
-    else if(this.mobile_phn ==null){
-
-      let alert = this.AlrtCtrl.create({
-
-        title: 'Error',
-        message:'Enter the valid Mobile number',
-        buttons:['OK']
-      });
-
-      alert.present();  
-    }
-
+   
     else{
 
     this.AF.auth.createUserWithEmailAndPassword(this.email,this.password).then(result =>{
@@ -138,10 +108,8 @@ export class SignupPage {
         }]
       });
 
-      this.tasksRef.push(this.hotel_name);
-      this.tasksRef.push(this.email);
-      this.tasksRef.push(this.mobile_phn);
-
+      this.email = null;
+      this.password = null;
 
       alert.present();
     }).catch(err =>{
@@ -154,6 +122,8 @@ export class SignupPage {
       });
 
       alert.present();  
+      this.email = null;
+      this.password = null;
     });
   }
 }
@@ -229,7 +199,7 @@ asramam_create(){
             content:'loading'
           });
           load.present();
-          this.navCtrl.push(HomePage);
+          this.navCtrl.push(AsramamdetailsPage);
           
         }
       }]

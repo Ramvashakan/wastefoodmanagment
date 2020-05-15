@@ -1,3 +1,4 @@
+import { AsramamPage } from './../pages/asramam/asramam';
 import { HotelPage } from './../pages/hotel/hotel';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';

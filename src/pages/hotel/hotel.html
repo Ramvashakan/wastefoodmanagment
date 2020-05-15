@@ -7,9 +7,9 @@
 
 <ion-content padding>
 
-  <ion-label>Thalapakatti</ion-label>
+  <ion-label class="heading">Thalapakatti</ion-label>
 
-  <ion-label>Add your donation</ion-label>
+  <ion-label class="subtitle">Add your donation</ion-label>
   
 
   <div>
@@ -36,28 +36,53 @@
       
       <ion-list *ngSwitchCase="'food'">
        
-          <ion-fab bottom right >
+        <div class="form" padding>
+        <ion-label class="food_head">Enter the following details </ion-label>
 
-            <button (click) ="update()" ion-fab mini>
-              
-              <ion-icon name="add"></ion-icon>
-            
-            </button>
-          </ion-fab>
+        <ion-input class="food_input" placeholder="Enter the type of food"></ion-input>
+
+        <ion-input class="food_input" placeholder="Food available for number of persons"></ion-input>
+
+        <ion-input class="food_input" placeholder="Enter your mobile number"></ion-input>
+        
+        <button class="donate" ion-button >Donate</button>
+    
+      </div>
+      
         
       </ion-list>
     
       <ion-list *ngSwitchCase="'cloths'">
-        <ion-fab bottom right >
-          <button ion-fab mini><ion-icon name="add"></ion-icon></button>
-        </ion-fab>
+        <div class="form" padding>
+          <ion-label class="food_head">Enter the following details </ion-label>
+  
+          <ion-input class="food_input" placeholder="Enter the type of Cloths"></ion-input>
+  
+          <ion-input class="food_input" placeholder="How many set of cloths available"></ion-input>
+  
+          <ion-input class="food_input" placeholder="Enter your mobile number"></ion-input>
+          
+          <button class="donate" ion-button >Donate</button>
+      
+        </div>
       </ion-list>
 
       <ion-list *ngSwitchCase="'books'">
 
-        <ion-fab bottom right >
-          <button ion-fab mini><ion-icon name="add"></ion-icon></button>
-        </ion-fab>
+        <div class="form" padding>
+          <ion-label class="food_head">Enter the following details </ion-label>
+  
+          <ion-input class="food_input" placeholder="Enter the book name"></ion-input>
+  
+          <ion-input class="food_input" placeholder="Number of books to be donated"></ion-input>
+  
+          <ion-input class="food_input" placeholder="Enter your mobile number"></ion-input>
+          
+          <button class="donate" ion-button >Donate</button>
+      
+        </div>
+
+
       </ion-list>
 
     </div>

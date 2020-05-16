@@ -7,7 +7,7 @@
 
 <ion-content padding>
 
-  <ion-label class="heading">Thalapakatti</ion-label>
+  <ion-label class="heading">{{ Hotelname |async}}</ion-label>
 
   <ion-label class="subtitle">Add your donation</ion-label>
   
@@ -37,15 +37,16 @@
       <ion-list *ngSwitchCase="'food'">
        
         <div class="form" padding>
-        <ion-label class="food_head">Enter the following details </ion-label>
 
-        <ion-input class="food_input" placeholder="Enter the type of food"></ion-input>
+        <ion-label  class="food_head">Enter the following details </ion-label>
 
-        <ion-input class="food_input" placeholder="Food available for number of persons"></ion-input>
+        <ion-input [(ngModel)] = "food" class="food_input" placeholder="Enter the type of food"></ion-input>
 
-        <ion-input class="food_input" placeholder="Enter your mobile number"></ion-input>
+        <ion-input [(ngModel)] = "quantity" class="food_input"  placeholder="Food available for number of persons"></ion-input>
+
+        <ion-input [(ngModel)] = "mobilenumber" class="food_input" placeholder="Enter your mobile number"></ion-input>
         
-        <button class="donate" ion-button >Donate</button>
+        <button (click)="food_donate()" class="donate" ion-button >Donate</button>
     
       </div>
       
@@ -56,13 +57,13 @@
         <div class="form" padding>
           <ion-label class="food_head">Enter the following details </ion-label>
   
-          <ion-input class="food_input" placeholder="Enter the type of Cloths"></ion-input>
+          <ion-input [(ngModel)] = 'Clothes' class="food_input" placeholder="Enter the type of Cloths"></ion-input>
   
-          <ion-input class="food_input" placeholder="How many set of cloths available"></ion-input>
+          <ion-input [(ngModel)] = 'NoOfSet' class="food_input" placeholder="How many set of cloths available"></ion-input>
   
-          <ion-input class="food_input" placeholder="Enter your mobile number"></ion-input>
+          <ion-input [(ngModel)] = 'C_MobileNo' class="food_input" placeholder="Enter your mobile number"></ion-input>
           
-          <button class="donate" ion-button >Donate</button>
+          <button (click)="cloth_donate()"  class="donate" ion-button >Donate</button>
       
         </div>
       </ion-list>
@@ -72,13 +73,13 @@
         <div class="form" padding>
           <ion-label class="food_head">Enter the following details </ion-label>
   
-          <ion-input class="food_input" placeholder="Enter the book name"></ion-input>
+          <ion-input [(ngModel)] = "books" class="food_input" placeholder="Enter the book name"></ion-input>
   
-          <ion-input class="food_input" placeholder="Number of books to be donated"></ion-input>
+          <ion-input [(ngModel)] = "NoOFBooks" class="food_input" placeholder="Number of books to be donated"></ion-input>
   
-          <ion-input class="food_input" placeholder="Enter your mobile number"></ion-input>
+          <ion-input [(ngModel)] = "B_mobilenumber" class="food_input" placeholder="Enter your mobile number"></ion-input>
           
-          <button class="donate" ion-button >Donate</button>
+          <button (click)="books_donate()" class="donate" ion-button >Donate</button>
       
         </div>
 

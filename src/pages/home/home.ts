@@ -106,9 +106,9 @@ export class HomePage {
       var UserId = this.AF.auth.currentUser.uid;
       return this.AD.database.ref('/users/' + UserId).once('value').then( snapshot => {
         
-        let usertype = (snapshot.val() && snapshot.val().user) || 'Atonumus' ;
+        let usertype = (snapshot.val() && snapshot.val().user);
 
-      console.log(usertype);
+      //console.log(usertype);
 
       if(usertype == 'hotel'){
 

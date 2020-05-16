@@ -3,7 +3,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController,LoadingController } from 'ionic-angular';
 import{ AngularFireDatabase,AngularFireList } from 'angularfire2/database';
-import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 

@@ -68,41 +68,31 @@ export class AsramamdetailsPage {
   }
 
   else if(this.as_mobile ==null){
-
     let alert = this.AlrtCtrl.create({
-
       title: 'Error',
       message:'Enter the valid Mobile number',
       buttons:['OK']
     });
-
     alert.present();  
   }
-
   else{
 
     let a = this.AF.auth.currentUser.uid;
-
     this.AD.database.ref('users/'+ a).set({
-
       hotelname: this.as_name,
       hotel_email:this.as_email,
       hotel_mobile:this.as_mobile,
       user:'asramam'
     });
-
       this.as_name = null;
       this.as_mobile = null;
       this.as_email= null; 
       let alrt = this.AlrtCtrl.create({
         title:'Data has been added successfully',
         buttons:[{
-
           text:'Ok',
           handler:() => {
-
             this.navCtrl.push(HomePage);
-
           }
         }]
       });

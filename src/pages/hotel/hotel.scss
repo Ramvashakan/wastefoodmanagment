@@ -1,24 +1,54 @@
 page-hotel {
 
+    ion-content{
+
+        background-color: rgb(71, 155, 204) !important;
+
+    }
 
     .heading{
         text-align: center;
         font-size: 30px;
         font-weight: 700;
+        color: white;
         font-family: cursive !important;
     }
 
     .subtitle{
 
+        color: white;
         text-align: center;
         font-size: 20px;
         font-weight: 400;
 
     }
+    ion-card{
+        color: white;
+        background-color:transparent !important;
+    }
+
+    ::placeholder{
+
+        color: white !important;
+        opacity: 3;
+        font-size: 17px;
+
+    }
+
+
+    div{
+        color: white !important;
+        background-color:transparent !important;
+    }
+
+    ion-item{
+        color: white;
+        background-color:transparent !important;
+    }
 
     .food_input{
 
-        border-bottom: solid thin gray;
+        border-bottom: solid thin white;
         margin-top: 30px;
         padding-left: 10px;
     }
@@ -31,7 +61,7 @@ page-hotel {
     .form{
         margin-top: 50px;
         background-color: rgb(247, 245, 245);
-        border: solid thin gray;
+        border: solid thin white;
         padding: 50px;
 
     }

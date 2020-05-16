@@ -39,15 +39,15 @@ export class MyApp {
              
                 console.log('user:' + use);
 
-            if(use == 'hotel'){
+              if(use == 'hotel'){
 
-              this.rootPage = HotelPage;
-            }
-            else if(use == 'asramam'){
-              
-              this.rootPage= AsramamPage
+                this.rootPage = HotelPage;
+              }
+              else if(use == 'asramam'){
+                
+                this.rootPage= AsramamPage
 
-            }
+              }
         });
       }
 

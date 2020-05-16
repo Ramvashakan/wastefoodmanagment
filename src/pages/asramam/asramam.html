@@ -5,7 +5,7 @@
    <div>
 
     <div padding>
-      <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="types">
+      <ion-segment  [(ngModel)]="types">
 
         <ion-segment-button value="food">
           Food
@@ -30,7 +30,7 @@
         
           <ion-list>
 
-            <ion-item  *ngFor = "let item of items">
+            <ion-item no-lines  *ngFor = "let item of items">
 
               <ion-card>
 
@@ -63,7 +63,7 @@
         <div class="form" padding>
          
               
-            <ion-item *ngFor = "let c_item of c_items">
+            <ion-item no-lines *ngFor = "let c_item of c_items">
 
               <ion-card>
 
@@ -89,7 +89,7 @@
         <div class="form" padding>
           
                 
-            <ion-item  *ngFor = "let b_item of b_items">
+            <ion-item no-lines *ngFor = "let b_item of b_items">
 
               <ion-card>
 
@@ -115,6 +115,10 @@
     </div>
 
   </div>
+
+  <ion-item no-lines>
+    <button item-end class="logout" (click)="signout()" ion-button>Signout</button>
+  </ion-item>
 
 
 </ion-content>

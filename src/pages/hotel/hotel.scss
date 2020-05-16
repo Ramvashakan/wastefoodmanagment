@@ -9,8 +9,6 @@ page-hotel {
     ion-segment-button{
 
         color: white !important;
-        //background-color: white !important;
-
     }
 
     .heading{
@@ -51,6 +49,7 @@ page-hotel {
     ion-item{
         color: white;
         background-color:transparent !important;
+        
     }
 
     .food_input{
@@ -79,6 +78,10 @@ page-hotel {
         left: 35%;
     }
 
-
-
+    .logout{
+       
+        font-size: 20px !important;
+        margin-top: 20px;
+        min-height: 40px !important;
+    }
 }

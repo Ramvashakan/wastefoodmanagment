@@ -66,9 +66,9 @@ export class AsramamPage {
     
   }
 
-  segmentChanged(event){
+  signout(){
 
-    
+    this.AF.auth.signOut(); 
 
   }
 

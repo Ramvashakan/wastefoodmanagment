@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController,LoadingController } from 'ionic-angular';
 
 import{ AngularFireAuth } from 'angularfire2/auth';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+
 
 @IonicPage()
 @Component({
@@ -34,7 +33,7 @@ export class SignupPage {
     ){
       
       
-      
+      this.selector = "asramam";
 
     }
 

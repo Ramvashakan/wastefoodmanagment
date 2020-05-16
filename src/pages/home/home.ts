@@ -98,7 +98,7 @@ export class HomePage {
         content:'Signing In..',
         dismissOnPageChange:true,
         spinner:'ios',
-        duration:2000
+        //duration:2000
       
       });
 

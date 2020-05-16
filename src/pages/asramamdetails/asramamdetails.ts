@@ -79,9 +79,9 @@ export class AsramamdetailsPage {
 
     let a = this.AF.auth.currentUser.uid;
     this.AD.database.ref('users/'+ a).set({
-      hotelname: this.as_name,
-      hotel_email:this.as_email,
-      hotel_mobile:this.as_mobile,
+      asramamName: this.as_name,
+      asramamEmail:this.as_email,
+      asramamMobile:this.as_mobile,
       user:'asramam'
     });
       this.as_name = null;

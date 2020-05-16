@@ -1,9 +1,10 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { c, b } from '@angular/core/src/render3';
+
 
 @IonicPage()
 @Component({
@@ -21,7 +22,8 @@ export class AsramamPage {
 
   b_items = [];
   b_keys:any;
-  
+
+  asramam_name:any;
 
 
   constructor(public navCtrl: NavController, 
@@ -33,6 +35,15 @@ export class AsramamPage {
     {
 
       this.types = "food";
+
+      let UserId = AF.auth.currentUser.uid;
+
+      this.AD.database.ref('/users/' + UserId).once('value').then( snapshot => {   
+       this.asramam_name = (snapshot.val() && snapshot.val().asramamName);
+
+      });
+
+
 
       console.log(this.types);
        this.AD.database.ref('/HotelDonation/Food').once('value').then( snapshot => {
@@ -68,7 +79,9 @@ export class AsramamPage {
 
   signout(){
 
-    this.AF.auth.signOut(); 
+    this.AF.auth.signOut().then( res =>{
+      this.navCtrl.setRoot(HomePage);
+    });
 
   }
 

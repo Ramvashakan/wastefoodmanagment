@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { AngularFireDatabase,AngularFireList } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Component } from '@angular/core';
@@ -52,7 +53,9 @@ export class HotelPage {
   }
 
   logout(){
-    this.AF.auth.signOut();
+    this.AF.auth.signOut().then(res =>{
+      this.navCtrl.setRoot(HomePage);
+    });
   }
 
 

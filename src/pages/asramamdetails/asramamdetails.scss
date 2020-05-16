@@ -1,9 +1,14 @@
 page-asramamdetails {
 
+    ion-content{
+        background-color: rgb(71, 155, 204) !important;
+    }
+
     .heading{
-        font-size: 18px;
+        font-size: 25px !important;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 60px !important;
+        color: white;
         font-weight: 500;
     }
 
@@ -14,8 +19,19 @@ page-asramamdetails {
     }
     ion-input{
 
+        background-color: transparent !important;
+        color: white;
         margin-top: 40px;
+        font-size: 20px;
+    }
 
+    ::placeholder{
+        color: white !important;
+        opacity: 3 !important;
+    }
+
+    ion-item{
+        background-color: transparent !important;
     }
 
     .radio{
@@ -32,9 +48,9 @@ page-asramamdetails {
     .bn_save{
         min-height: 50px;
         min-width: 100px !important;
-        margin-top: 50px !important;
+        margin-top: 80px !important;
         margin-left: 30% !important;
-        font-size: 15px !important;
+        font-size: 18px !important;
         
     }
 

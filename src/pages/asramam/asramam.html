@@ -5,7 +5,7 @@
    <div>
 
     <div padding>
-      <ion-segment [(ngModel)]="types">
+      <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="types">
 
         <ion-segment-button value="food">
           Food
@@ -30,17 +30,17 @@
         
           <ion-list>
 
-            <ion-item *ngFor = "let item of items">
+            <ion-item  *ngFor = "let item of items">
 
               <ion-card>
 
-                <ion-card-header> {{item}} </ion-card-header>
+                <ion-card-header> {{item.HotelName}} </ion-card-header>
 
                 <ion-card-content>
 
-                  <p><b>Food:</b> {{item}} </p>
+                  <p><b>Food:</b> {{item.Food}} </p>
                   <p><b>Quantity:</b> {{item.Quantity}} </p>
-                  <p><b>ContactNumber:</b> {{item.MN}} </p>
+                  <p><b>ContactNumber:</b> {{item.MobileNumber}} </p>
 
                 </ion-card-content>
 
@@ -63,6 +63,23 @@
         <div class="form" padding>
          
               
+            <ion-item *ngFor = "let c_item of c_items">
+
+              <ion-card>
+
+                <ion-card-header>Hotel Name: {{c_item.HotelName}} </ion-card-header>
+
+                <ion-card-content>
+
+                  <p><b>Cloth Type:</b> {{c_item.ClothType}} </p>
+                  <p><b>Quantity:</b> {{c_item.Quantity}} </p>
+                  <p><b>ContactNumber:</b> {{c_item.MobileNumber}} </p>
+
+                </ion-card-content>
+
+              </ion-card>
+
+            </ion-item>
       
         </div>
       </ion-list>
@@ -72,6 +89,23 @@
         <div class="form" padding>
           
                 
+            <ion-item  *ngFor = "let b_item of b_items">
+
+              <ion-card>
+
+                <ion-card-header>Hotel Name:{{b_item.HotelName}} </ion-card-header>
+
+                <ion-card-content>
+
+                  <p><b>Book Type:</b> {{b_item.BookType}} </p>
+                  <p><b>Quantity:</b> {{b_item.Quantity}} </p>
+                  <p><b>ContactNumber:</b> {{b_item.MobileNumber}} </p>
+
+                </ion-card-content>
+
+              </ion-card>
+
+            </ion-item>
       
         </div>
 

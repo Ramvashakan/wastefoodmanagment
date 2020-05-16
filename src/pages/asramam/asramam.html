@@ -28,14 +28,33 @@
        
         <div class="form" padding>
         
-            <ion-list no-lines>
-                <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-                  {{ item }}
-                </button>  
-              </ion-list>
+          <ion-list>
 
-    
+            <ion-item *ngFor = "let item of items">
+
+              <ion-card>
+
+                <ion-card-header> {{item}} </ion-card-header>
+
+                <ion-card-content>
+
+                  <p><b>Food:</b> {{item}} </p>
+                  <p><b>Quantity:</b> {{item.Quantity}} </p>
+                  <p><b>ContactNumber:</b> {{item.MN}} </p>
+
+                </ion-card-content>
+
+              </ion-card>
+
+            </ion-item>
+
+
+          </ion-list>
+                
+
         </div>
+
+
       
         
       </ion-list>
@@ -43,11 +62,7 @@
       <ion-list *ngSwitchCase="'cloths'">
         <div class="form" padding>
          
-                <ion-list no-lines>
-                    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-                      {{ item }}
-                    </button>  
-                  </ion-list>
+              
       
         </div>
       </ion-list>
@@ -56,11 +71,7 @@
 
         <div class="form" padding>
           
-                <ion-list no-lines>
-                    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-                      {{ item }}
-                    </button>  
-                  </ion-list>
+                
       
         </div>
 

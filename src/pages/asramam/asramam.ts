@@ -13,6 +13,8 @@ export class AsramamPage {
 
   types:any;
   items = [];
+  trail:any;
+  itm:any;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -22,27 +24,26 @@ export class AsramamPage {
     ) 
     {
 
-       this.AD.database.ref('/HotelDonation/Food/' ).once('value').then( snapshot => {
-        var food = (snapshot.val() && snapshot.val()) ;
-        //var quantity = (snapshot.val() && snapshot.val().Quantity) || 'Anonymous';
-        //var mobile_number = (snapshot.val() && snapshot.val().MobileNumber) || 'Anonymous';
+       this.AD.database.ref('/HotelDonation/Food').once('value').then( snapshot => {
+        
+          this.trail = (snapshot.val() && snapshot.val());
 
-        console.log(food);
+        // var hotelName = (snapshot.val() && snapshot.val().HotelName);
+        // var food = (snapshot.val() && snapshot.val().Food);
+        // var quantity = (snapshot.val() && snapshot.val().Quantity);
+        // var mobile_number = (snapshot.val() && snapshot.val().MobileNumber); 
+        const myvalue = Object.value
 
-        this.items.push(food);
+        console.log(this.trail);
 
        });
-
-      
-
     }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AsramamPage');
+    
   }
 
-  itemSelected(item: string) {
-    console.log("Selected Item:", item);
-  }
+ 
 
 }

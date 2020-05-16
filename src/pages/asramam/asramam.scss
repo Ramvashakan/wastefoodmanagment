@@ -1,9 +1,46 @@
 page-asramam {
 
+
+    ion-content{
+        background-color: rgb(71, 155, 204) !important;
+    }
+
+    ion-list{
+        background-color: transparent !important;
+    }
+
+    ion-card{
+        border: solid thin white !important;
+        background-color: transparent !important;
+        color: white !important;
+    }
+
+    p{
+        color: white !important;
+    }
+
+    ion-card-header{
+        color: white !important;
+    }
+
+    div{
+
+        background-color: transparent !important;
+        
+    }
+
+    ion-item{
+        color: white !important;
+        background-color: transparent !important;
+    }
+
+   
+
     .heading{
         text-align: center;
         font-size: 30px;
         font-weight: 700;
+        color: white !important;
         font-family: cursive !important;
     }
 

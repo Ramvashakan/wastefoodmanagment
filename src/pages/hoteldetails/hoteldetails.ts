@@ -17,7 +17,7 @@ export class HoteldetailsPage {
 
   hotel_name:any;
   email:any;
-  mobile_no;
+  mobile_no:any;
   password:any;
   tasksRef: AngularFireList<any>;
   tasks: Observable<any[]>;
@@ -29,12 +29,7 @@ export class HoteldetailsPage {
     public Loading:LoadingController,
     public AD: AngularFireDatabase
     ){
-    let a = this.AF.auth.currentUser.uid;
-      this.tasksRef = AD.list('Hotels/'+a);
-       this.tasks = this.tasksRef.snapshotChanges().pipe(
-       map(changes => 
-       changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-     ));
+   
   }
 
   ionViewDidLoad() {
@@ -68,13 +63,20 @@ export class HoteldetailsPage {
     }
     else{
 
-      this.tasksRef.push(this.hotel_name);
-      this.tasksRef.push(this.email);
-      this.tasksRef.push(this.mobile_no);
+      let a = this.AF.auth.currentUser.uid;
+
+      this.AD.database.ref('users/'+ a).set({
+
+        hotelname: this.hotel_name,
+        hotel_email:this.email,
+        hotel_mobile:this.mobile_no,
+        user:'hotel'
+      });
 
       this.hotel_name = null;
       this.mobile_no = null;
       this.email = null; 
+
       let alrt = this.AlrtCtrl.create({
         title:'Data has been added successfully',
         buttons:[{

@@ -1,9 +1,13 @@
+import { AsramamPage } from './../asramam/asramam';
 import { HotelPage } from './../hotel/hotel';
 import { SignupPage } from './../signup/signup';
 import { Component } from '@angular/core';
 import { NavController, LoadingController, AlertController } from 'ionic-angular';
 
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { setRootDomAdapter } from '@angular/platform-browser/src/dom/dom_adapter';
+
 
 @Component({
   selector: 'page-home',
@@ -15,12 +19,14 @@ export class HomePage {
 
   email:any;
   password:any;
+  //usertype:any;
 
   constructor(public navCtrl: NavController,
     
     public AF:AngularFireAuth,
     public loading:LoadingController,
-    public AlrtCtrl:AlertController
+    public AlrtCtrl:AlertController,
+    public AD:AngularFireDatabase
 
     ) { }
 
@@ -90,11 +96,44 @@ export class HomePage {
 
         content:'Signing In..',
         dismissOnPageChange:true,
-        spinner:'ios'
+        spinner:'ios',
+        duration:2000
+      
       });
 
       load.present();
 
+      var UserId = this.AF.auth.currentUser.uid;
+      return this.AD.database.ref('/users/' + UserId).once('value').then( snapshot => {
+        
+        let usertype = (snapshot.val() && snapshot.val().user) || 'Atonumus' ;
+
+      console.log(usertype);
+
+      if(usertype == 'hotel'){
+
+      this.navCtrl.push(HotelPage)
+      }
+      else if(usertype == 'asramam'){
+        this.navCtrl.push(AsramamPage);
+      }
+
+      
+      }).catch(err =>{
+
+        let alrt = this.AlrtCtrl.create({
+
+          message:err,
+          buttons:['ok']
+        });
+
+        alrt.present();
+
+      })
+
+      
+    
+ 
     }).catch(err => {
 
         let alert = this.AlrtCtrl.create({

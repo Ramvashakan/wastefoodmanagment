@@ -30,12 +30,7 @@ export class AsramamdetailsPage {
     public Loading:LoadingController,
     public AD: AngularFireDatabase
     ) {
-      let a = this.AF.auth.currentUser.uid;
-      this.tasksRef = AD.list('Asramam/'+a);
-       this.tasks = this.tasksRef.snapshotChanges().pipe(
-       map(changes => 
-       changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-     ));
+      
       }
 
   ionViewDidLoad() {
@@ -86,9 +81,15 @@ export class AsramamdetailsPage {
 
   else{
 
-    this.tasksRef.push(this.as_name);
-      this.tasksRef.push(this.as_email);
-      this.tasksRef.push(this.as_mobile);
+    let a = this.AF.auth.currentUser.uid;
+
+    this.AD.database.ref('users/'+ a).set({
+
+      hotelname: this.as_name,
+      hotel_email:this.as_email,
+      hotel_mobile:this.as_mobile,
+      user:'asramam'
+    });
 
       this.as_name = null;
       this.as_mobile = null;

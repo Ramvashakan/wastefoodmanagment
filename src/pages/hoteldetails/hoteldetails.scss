@@ -1,10 +1,15 @@
 page-hoteldetails {
 
+    ion-content{
+        background-color: rgb(71, 155, 204) !important;
+    }
+
     .heading{
-        font-size: 18px;
+        font-size: 24px;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 90px;
         font-weight: 500;
+        color: white;
     }
 
     .signup_input{
@@ -12,10 +17,20 @@ page-hoteldetails {
         margin-top: 50px;
 
     }
-    ion-input{
 
+    ion-item{
+        background-color: transparent !important;
+    }
+
+    ion-input{
+        color: white;
         margin-top: 40px;
 
+    }
+    ::placeholder{
+        color: white !important;
+        font-size: 20px;
+        opacity: 3 !important;
     }
 
     .radio{
@@ -32,7 +47,7 @@ page-hoteldetails {
     .bn_save{
         min-height: 50px;
         min-width: 100px !important;
-        margin-top: 50px !important;
+        margin-top: 70px !important;
         margin-left: 30% !important;
         font-size: 15px !important;
         

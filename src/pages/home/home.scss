@@ -1,23 +1,52 @@
 page-home {
+    ion-content{
+
+        background-color: rgb(71, 155, 204) !important;
+
+    }
 
     .heading{
 
         font-size: 30px;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 120px;
 
 
     }
+    .inp{
+
+        background-color: transparent !important;
+
+    }
+    ::placeholder{
+        color: white !important;
+        opacity: 20 !important;
+    }
+
+    .input_login{
+        color: white;
+        background-color: transparent !important;
+        border-bottom: solid thin gray;
+    }
 
     .input{
-
+        background-color: transparent !important;
         margin-top: 30px;
+        color: white;
+        font-size: 20px;
+    }
+    .divide{
+
+        font-size: 60px;
+        text-align: center;
+
+
     }
 
     .btm{
 
-        
-        margin-top: 40px !important;
+        background-color: transparent;
+        margin-top: 140px !important;
     }
 
     .login{
@@ -25,6 +54,8 @@ page-home {
         padding: 10px !important;
         min-height: 40px !important;
         border-radius: 10px;    
+        min-width: 80px;
+        margin-top: 20px !important;
     }
 
     .signup{

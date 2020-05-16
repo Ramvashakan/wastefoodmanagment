@@ -5,12 +5,12 @@
   
   <ion-list no-lines class="input" >
 
-    <ion-item>
-    <ion-input [(ngModel)] = "email" placeholder="Enter the email id"> </ion-input>
+    <ion-item class="inp" >
+    <ion-input class="input_login" [(ngModel)] = "email" placeholder="Enter the email id"> </ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-input [(ngModel)] = "password" placeholder="Enter the password"> </ion-input>
+  <ion-item class="inp">
+    <ion-input class="input_login" [(ngModel)] = "password" placeholder="Enter the password"> </ion-input>
   </ion-item>
 
 
@@ -18,6 +18,8 @@
 
 
   <button ion-button (click)="login()" class="login" item-start>Login</button>
+
+  <ion-label class="divide">|</ion-label>
 
   <button (click)="signup()" ion-button class="signup" item-end>Signup</button>
   

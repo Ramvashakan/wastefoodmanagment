@@ -1,3 +1,4 @@
+import { SignupPage } from './../pages/signup/signup';
 import { AsramamdetailsPage } from './../pages/asramamdetails/asramamdetails';
 import { HoteldetailsPage } from './../pages/hoteldetails/hoteldetails';
 import { HomePage } from './../pages/home/home';
@@ -13,7 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = SignupPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

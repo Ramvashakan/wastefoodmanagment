@@ -37,19 +37,24 @@ export class HotelPage {
     public Loading: LoadingController
     ) {
 
-      //  let UserId = AF.auth.currentUser.uid;
+        let UserId = AF.auth.currentUser.uid;
 
-      //  this.AD.database.ref('/users/' + UserId).once('value').then( snapshot => {   
-      //   this.Hotelname = (snapshot.val() && snapshot.val().hotelname);
+        this.AD.database.ref('/users/' + UserId).once('value').then( snapshot => {   
+         this.Hotelname = (snapshot.val() && snapshot.val().hotelname);
 
-      //  });
+        });
 
-
+      this.types = 'food'
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HotelPage');
   }
+
+  logout(){
+    this.AF.auth.signOut();
+  }
+
 
   food_donate(){
 

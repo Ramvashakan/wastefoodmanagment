@@ -6,7 +6,6 @@ import { NavController, LoadingController, AlertController } from 'ionic-angular
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { setRootDomAdapter } from '@angular/platform-browser/src/dom/dom_adapter';
 
 
 @Component({
@@ -33,6 +32,8 @@ export class HomePage {
   signup(){
 
     this.navCtrl.push(SignupPage);
+    this.email = null;
+    this.password =null;
 
   }
 
@@ -108,14 +109,19 @@ export class HomePage {
         
         let usertype = (snapshot.val() && snapshot.val().user);
 
+          
       //console.log(usertype);
 
       if(usertype == 'hotel'){
-
+        
       this.navCtrl.push(HotelPage)
+      this.email = null;
+      this.password = null;
       }
       else if(usertype == 'asramam'){
         this.navCtrl.push(AsramamPage);
+        this.password = null;
+        this.email =null; 
       }
 
       

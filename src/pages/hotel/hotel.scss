@@ -2,7 +2,9 @@ page-hotel {
 
     ion-content{
 
-        background-color: rgb(71, 155, 204) !important;
+        background-image: url('../../assets/imgs/donatea.jpg') !important;
+        background-size: cover;
+        background-repeat: no-repeat;
 
     }
 
@@ -14,8 +16,9 @@ page-hotel {
     .heading{
         text-align: center;
         font-size: 30px;
-        font-weight: 700;
+        font-weight: 300 !important;
         color: white;
+        text-transform: uppercase;
         font-family: cursive !important;
     }
 

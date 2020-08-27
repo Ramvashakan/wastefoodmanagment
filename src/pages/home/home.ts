@@ -37,7 +37,7 @@ export class HomePage {
 
   }
 
-  /*.........................LOGIN PAGE....................................... */
+  /* .........................LOGIN PAGE....................................... */
 
   login(){
 
@@ -97,7 +97,7 @@ export class HomePage {
 
         content:'Signing In..',
         dismissOnPageChange:true,
-        spinner:'ios',
+        spinner:'ios'
         //duration:2000
       
       });
@@ -151,7 +151,7 @@ export class HomePage {
             text:'OK',
             handler: ()=>{
 
-              this.email = null;
+              //this.email = null;
               this.password = null;
 
             }

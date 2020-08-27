@@ -5,17 +5,30 @@
   
   <ion-list no-lines class="input" >
 
-    <ion-item class="inp" >
-    <ion-input class="input_login" type="email" [(ngModel)] = "email" placeholder="Enter the email id"> </ion-input>
-  </ion-item>
+    <div>
 
+    <ion-item class="inp" >  
+      <ion-input name = "emailid" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required #emailid = "ngModel" [class.errorinput] = "emailid.invalid && emailid.touched" class="input_login" type="email" [(ngModel)] = "email" placeholder="Enter the email id"> </ion-input>
+
+    </ion-item>
+
+    <div *ngIf = " emailid.errors && (emailid.invalid && emailid.touched)">
+
+  <small *ngIf= "emailid.errors.required" style= "color: red;" >Email is required</small>
+
+  <small *ngIf= "emailid.errors.pattern" style= "color: red;" >Email is invalid</small>
+</div>
+
+</div>
+
+  
   <ion-item class="inp">
     <ion-input class="input_login" type="password" [(ngModel)] = "password" placeholder="Enter the password"> </ion-input>
+  
   </ion-item>
 
 
 <ion-item class="btm">
-
 
   <button ion-button (click)="login()" class="login" item-start>Login</button>
 

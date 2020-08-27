@@ -1,10 +1,11 @@
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,LoadingController } from 'ionic-angular';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
+import { CallNumber } from '@ionic-native/call-number';
 
 @IonicPage()
 @Component({
@@ -28,9 +29,10 @@ export class AsramamPage {
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
-    
+    public Loading:LoadingController,
     public AF:AngularFireAuth,
-    public AD:AngularFireDatabase
+    public AD:AngularFireDatabase,
+    public callnumber:CallNumber
     ) 
     {
 
@@ -67,10 +69,7 @@ export class AsramamPage {
       
     });
     
-    
-    
-    
-      }
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AsramamPage');
@@ -79,12 +78,36 @@ export class AsramamPage {
 
   signout(){
 
-    this.AF.auth.signOut().then( res =>{
-      this.navCtrl.setRoot(HomePage);
+    let load =this.Loading.create({
+
+      spinner:'ios',
+      content:'Logout',
+      dismissOnPageChange:true
+      
     });
+
+    load.present();
+
+   
+    this.AF.auth.signOut().then( res =>{
+     
+      this.navCtrl.setRoot(HomePage);
+       
+    });
+    
 
   }
 
- 
+  call(number){
 
+    this.callnumber.callNumber(number,true).then(res => {
+
+      console.log(number);
+
+    }).catch(err =>{
+
+      console.log(err);
+
+    });
+  }
 }

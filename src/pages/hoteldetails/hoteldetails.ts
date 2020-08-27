@@ -18,8 +18,7 @@ export class HoteldetailsPage {
   email:any;
   mobile_no:any;
   password:any;
-  tasksRef: AngularFireList<any>;
-  tasks: Observable<any[]>;
+  
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -27,9 +26,7 @@ export class HoteldetailsPage {
     public AlrtCtrl:AlertController,
     public Loading:LoadingController,
     public AD: AngularFireDatabase
-    ){
-   
-  }
+    ){ }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HoteldetailsPage');
@@ -44,6 +41,7 @@ export class HoteldetailsPage {
         title: 'Error',
         message:'Enter the valid Hotel Name',
         buttons:['OK']
+      
       });
 
       alert.present();  

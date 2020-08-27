@@ -38,19 +38,24 @@
                 <ion-card-header> {{item.HotelName}} </ion-card-header>
 
                 <ion-card-content>
-
+                  <ion-item>
                   <p><b>Food:</b> {{item.Food}} </p>
+                </ion-item>
+                <ion-item>
                   <p><b>Quantity:</b> {{item.Quantity}} </p>
+                </ion-item>
+                  <ion-item>
                   <p><b>ContactNumber:</b> {{item.MobileNumber}} </p>
-
+                  <button item-end (click)="call(item.MobileNumber)"  class="call_bn" ion-button>
+                  <ion-icon class= "call" name="call"></ion-icon>
+                  </button>
+               
+                </ion-item>
                 </ion-card-content>
               </ion-card>
             </ion-item>
           </ion-list>
-        </div>
-
-
-      
+        </div>      
         
       </ion-list>
     
@@ -66,10 +71,23 @@
 
                 <ion-card-content>
 
+                <ion-item>
                   <p><b>Cloth Type:</b> {{c_item.ClothType}} </p>
+                </ion-item>
+                
+                <ion-item>
+                  
                   <p><b>Quantity:</b> {{c_item.Quantity}} </p>
-                  <p><b>ContactNumber:</b> {{c_item.MobileNumber}} </p>
+                </ion-item>
+                  
+                <ion-item>
 
+                  <p><b>ContactNumber:</b> {{c_item.MobileNumber}} </p>
+                  <button item-end (click)="call(c_item.MobileNumber)" class="call_bn" ion-button>
+                  <ion-icon class= "call" name="call"></ion-icon>
+                  </button>
+                    
+                </ion-item>
                 </ion-card-content>
 
               </ion-card>
@@ -92,10 +110,25 @@
 
                 <ion-card-content>
 
-                  <p><b>Book Type:</b> {{b_item.BookType}} </p>
-                  <p><b>Quantity:</b> {{b_item.Quantity}} </p>
-                  <p><b>ContactNumber:</b> {{b_item.MobileNumber}} </p>
+                <ion-item>
 
+                  <p><b>Book Type:</b> {{b_item.BookType}} </p>
+                
+                </ion-item>
+
+                <ion-item>
+                  
+                  <p><b>Quantity:</b> {{b_item.Quantity}} </p>
+
+                </ion-item>
+
+                <ion-item>
+
+                  <p><b>ContactNumber:</b> {{b_item.MobileNumber}} </p>
+                  <button item-end (click)="call(b_item.MobileNumber)"  class="call_bn" ion-button>
+                  <ion-icon class= "call" name="call"></ion-icon>
+                  </button>
+                </ion-item>
                 </ion-card-content>
 
               </ion-card>

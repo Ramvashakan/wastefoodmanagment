@@ -17,6 +17,10 @@ import { SignupPage } from './../pages/signup/signup';
 import { AsramamdetailsPage } from './../pages/asramamdetails/asramamdetails';
 import { HoteldetailsPage } from './../pages/hoteldetails/hoteldetails';
 
+import {CallNumber} from '@ionic-native/call-number'
+
+import { Network } from '@ionic-native/network';
+
 
 @NgModule({
   declarations: [
@@ -46,8 +50,8 @@ import { HoteldetailsPage } from './../pages/hoteldetails/hoteldetails';
     HoteldetailsPage
   ],
   providers: [
-    StatusBar,
-    SplashScreen,AngularFireAuth,AngularFireDatabase,
+    StatusBar,Network,
+    SplashScreen,AngularFireAuth,AngularFireDatabase,CallNumber,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

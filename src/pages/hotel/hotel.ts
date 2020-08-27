@@ -54,7 +54,21 @@ export class HotelPage {
 
   logout(){
     this.AF.auth.signOut().then(res =>{
-      this.navCtrl.setRoot(HomePage);
+
+      let load =this.Loading.create({
+
+        spinner:'ios',
+        duration:2000
+
+      });
+
+      load.present();
+
+      load.onDidDismiss(() =>{
+
+        this.navCtrl.setRoot(HomePage);
+      });
+      
     });
   }
 
@@ -72,25 +86,38 @@ export class HotelPage {
         
        }).then(result =>{
 
-         let alert = this.AlrtCtrl.create({
+        let load = this.Loading.create({
 
-           title:'Donation Added',
-           subTitle:'User Donation has been added successfully',
-        buttons:[{
-            
-             text:'OK',
-             handler: ()=>{
+          content:'Donating..',
+          spinner:'ios',
+          duration:3000
 
-               this.food = null;
-               this.quantity = null;
-               this.mobilenumber = null;
-           }
-           }]
-          
-         });
+        });
 
-         alert.present();
+        load.present();
 
+        load.onDidDismiss(() =>{
+
+          let alert = this.AlrtCtrl.create({
+
+            title:'Donation Added',
+            subTitle:'User Donation has been added successfully',
+            buttons:[{
+             
+              text:'OK',
+              handler: ()=>{
+ 
+                this.food = null;
+                this.quantity = null;
+                this.mobilenumber = null;
+            }
+            }]
+           
+          });
+ 
+          alert.present();
+
+        });     
        }).catch(err =>{
 
          let alert = this.AlrtCtrl.create({

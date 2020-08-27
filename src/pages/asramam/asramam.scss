@@ -6,7 +6,11 @@ page-asramam {
     }
 
     ion-content{
-        background-color: rgb(71, 155, 204) !important;
+        background-image: url('../../assets/imgs/donateh.jpg') !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        
     }
 
     ion-list{
@@ -54,5 +58,15 @@ page-asramam {
         min-height: 40px !important;
     }
 
+    .call_bn{
+
+        background-color: transparent;
+        //font-size: 20px !important;
+        border-radius: 50%;
+        border: solid thin white;
+        text-align: center !important;
+    }
+
+   
 
 }

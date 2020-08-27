@@ -1,11 +1,9 @@
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController,LoadingController } from 'ionic-angular';
-import{ AngularFireDatabase,AngularFireList } from 'angularfire2/database';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import{ AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { from } from 'rxjs/observable/from';
+
 
 
 
@@ -19,8 +17,7 @@ export class AsramamdetailsPage {
   as_mobile:any;
   as_name:any;
   as_email:any;
-  tasksRef: AngularFireList<any>;
-  tasks: Observable<any[]>;
+  
 
 
   constructor(public navCtrl: NavController, 
@@ -29,9 +26,7 @@ export class AsramamdetailsPage {
     public AlrtCtrl:AlertController,
     public Loading:LoadingController,
     public AD: AngularFireDatabase
-    ) {
-      
-      }
+    ) { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AsramamdetailsPage');

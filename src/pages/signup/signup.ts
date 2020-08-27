@@ -1,6 +1,6 @@
 import { AsramamdetailsPage } from './../asramamdetails/asramamdetails';
 import { HoteldetailsPage } from './../hoteldetails/hoteldetails';
-import { AngularFireDatabase,AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController,LoadingController } from 'ionic-angular';
@@ -19,7 +19,7 @@ export class SignupPage {
   
   as_email:any;
   as_password:any;
-  mobile_phn:any;
+  
   password:any;
   email:any;
   
@@ -47,10 +47,6 @@ export class SignupPage {
 
   }
 
-  asramam(){
-
-    this.navCtrl.push(HomePage)
-  }
 
 /*.................................SIGNUP HOTEL...............................*/
 
@@ -86,22 +82,26 @@ export class SignupPage {
 
     this.AF.auth.createUserWithEmailAndPassword(this.email,this.password).then(result =>{
 
-     let alert = this.AlrtCtrl.create({
+     let load = this.Loading.create({
+
+      content:'Creating Account...',
+      spinner:'ios',
+      duration:3000
+      
+     });
+     
+     load.present();
+
+     load.onDidDismiss(() =>{
+
+      let alert = this.AlrtCtrl.create({
 
         title: 'Success',
         message:'Account created Successfull',
         buttons:[{
           text:'OK',
           handler: () =>{
-
-            let load = this.Loading.create({
-              spinner:'ios',
-              dismissOnPageChange:true,
-              content:'loading'
-            });
-            load.present();
             this.navCtrl.push(HoteldetailsPage);
-            
           }
         }]
       });
@@ -110,6 +110,11 @@ export class SignupPage {
       this.password = null;
 
       alert.present();
+
+
+     });
+
+    
     }).catch(err =>{
 
       let alert = this.AlrtCtrl.create({
@@ -159,9 +164,21 @@ asramam_create(){
 
   this.AF.auth.createUserWithEmailAndPassword(this.as_email,this.as_password).then(result =>{
 
-    console.log(result);
+    //console.log(result);
 
-   let alert = this.AlrtCtrl.create({
+    let load = this.Loading.create({
+
+      content:'Creating Account...',
+      spinner:'ios',
+      duration:3000
+      
+     });
+     
+     load.present();
+
+     load.onDidDismiss(() =>{
+
+    let alert = this.AlrtCtrl.create({
 
       title: 'Success',
       message:'Account created Successfull',
@@ -169,19 +186,16 @@ asramam_create(){
         text:'OK',
         handler: () =>{
 
-          let load = this.Loading.create({
-            spinner:'ios',
-            dismissOnPageChange:true,
-            content:'loading'
-          });
-          load.present();
           this.navCtrl.push(AsramamdetailsPage);
           
         }
       }]
     });
-
     alert.present();
+    this.as_email = null;
+    this.as_password = null;  
+  });
+    
   }).catch(err =>{
 
     let alert = this.AlrtCtrl.create({
@@ -194,8 +208,6 @@ asramam_create(){
     alert.present();  
   });
 }
-
-
 }
 
 }

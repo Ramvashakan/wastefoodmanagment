@@ -1,11 +1,13 @@
 page-hoteldetails {
 
     ion-content{
-        background-color: rgb(71, 155, 204) !important;
+        background-image: url('../../assets/imgs/bg-2.jpg') !important;
+        background-size: cover;
+        background-position: center;
     }
 
     .heading{
-        font-size: 24px;
+        font-size: 30px;
         text-align: center;
         margin-top: 90px;
         font-weight: 500;
@@ -50,15 +52,15 @@ page-hoteldetails {
         margin-top: 70px !important;
         margin-left: 30% !important;
         font-size: 15px !important;
+        background-color: transparent;
+        border: solid thin white;
         
     }
 
-   
 
     .segment{
-
-        
-        font-size: 20px;
+    
+       font-size: 20px;
     
 
     }

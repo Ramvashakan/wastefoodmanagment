@@ -2,7 +2,7 @@
 <ion-content padding>
 
   <div padding>
-    <ion-segment [(ngModel)]="selector">
+    <ion-segment [(ngModel)]= "selector">
       <ion-segment-button  value="asramam">
         Asramam
       </ion-segment-button>
@@ -14,7 +14,7 @@
 
   <div [ngSwitch] = "selector">
 
-    <ion-list *ngSwitchCase= "'asramam'" > 
+    <ion-list *ngSwitchCase = "'asramam'"> 
 
       <ion-label class="heading"> Sign Up as Asramam</ion-label>
     

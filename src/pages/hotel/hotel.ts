@@ -2,7 +2,7 @@ import { HomePage } from './../home/home';
 import { AngularFireDatabase,AngularFireList } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,AlertController,LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController,LoadingController, Platform } from 'ionic-angular';
 
 
 
@@ -35,8 +35,26 @@ export class HotelPage {
     public AF:AngularFireAuth,
     public AD:AngularFireDatabase,
     public AlrtCtrl: AlertController,
-    public Loading: LoadingController
+    public Loading: LoadingController,
+    private ionicPlatform:Platform
+
     ) {
+
+         
+    let load =this.Loading.create({
+
+      spinner:'ios',
+      content:'Logout',
+        
+    });
+
+    load.present();
+
+      this.ionicPlatform.ready().then((res)=>{
+
+          load.dismiss();
+
+      });
 
         let UserId = AF.auth.currentUser.uid;
 

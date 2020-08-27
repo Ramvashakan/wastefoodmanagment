@@ -1,87 +1,92 @@
 page-home {
-    ion-content{
+  ion-content {
 
-        background-image: url('../../assets/imgs/login-bg.jpg') !important;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+    background-image: url('../../assets/imgs/login-bg.jpg') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
-    }
+  }
 
-    .heading{
+  .heading {
 
-        font-size: 40px;
-        text-align: center;
-        margin-top: 120px;
-        color: white;
-        font-weight: 700;
-
-
-    }
-    .inp{
-
-        background-color: transparent !important;
-
-    }
-    ::placeholder{
-        color: white !important;
-        opacity: 20 !important;
-    }
-
-    .input_login{
-        color: white;
-        background-color: transparent !important;
-        border-bottom: solid thin white;
-        border: solid thin   white;
-    }
-
-    .input{
-        background-color: transparent !important;
-        margin-top: 30px;
-        color: white;
-        font-size: 20px;
-    }
-    .divide{
-
-        font-size: 60px;
-        text-align: center;
-        color: white;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 120px;
+    color: white;
+    font-weight: 700;
 
 
-    }
+  }
 
-    .btm{
+  .inp {
 
-        background-color: transparent;
-        margin-top: 140px !important;
-    }
+    background-color: transparent !important;
 
-    .login{
-        font-size: 20px !important;
-        padding: 10px !important;
-        min-height: 40px !important;
-        border-radius: 10px;    
-        min-width: 80px;
-        margin-top: 20px !important;
-        background-color: transparent;
-        border: solid thin white;
-    }
+  }
 
-    .signup{
-        font-size: 20px !important;
-        padding: 10px !important;
-        min-height: 40px;
-        border-radius: 10px;
-        border-bottom: none !important;
-        background-color: transparent;
-        border: solid thin white;
-    }
- 
-    .errorinput{
+  ::placeholder {
+    color: white !important;
+    opacity: 20 !important;
+  }
 
-        border-bottom: solid thin red;
+  .input_login {
+    color: white;
+    background-color: transparent !important;
+    border-bottom: solid thin white;
+    border: solid thin white;
+  }
 
-    }
+  .input {
+    background-color: transparent !important;
+    margin-top: 30px;
+    color: white;
+    font-size: 20px;
+  }
+
+  .divide {
+
+    font-size: 60px;
+    text-align: center;
+    color: white;
+
+
+  }
+
+  .btm {
+
+    background-color: transparent;
+    margin-top: 140px !important;
+  }
+
+  .login {
+    font-size: 20px !important;
+    padding: 10px !important;
+    min-height: 40px !important;
+    border-radius: 10px;
+    min-width: 80px;
+    margin-top: 20px !important;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border: solid thin white;
+  }
+
+  .signup {
+    font-size: 20px !important;
+    padding: 10px !important;
+    min-height: 40px;
+    border-radius: 10px;
+    border-bottom: none !important;
+    background-color: transparent;
+    border: solid thin white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  }
+
+  .errorinput {
+
+    border-bottom: solid thin red;
+
+  }
 
 
 

@@ -1,6 +1,6 @@
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,LoadingController, Platform } from 'ionic-angular';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -32,9 +32,29 @@ export class AsramamPage {
     public Loading:LoadingController,
     public AF:AngularFireAuth,
     public AD:AngularFireDatabase,
-    public callnumber:CallNumber
+    public callnumber:CallNumber,
+    private ionicPlatform:Platform
+     
     ) 
     {
+
+     
+    let load =this.Loading.create({
+
+      spinner:'ios',
+      content:'Logout',
+      
+      
+    });
+
+    load.present();
+
+      this.ionicPlatform.ready().then((res)=>{
+
+          load.dismiss();
+
+      })
+
 
       this.types = "food";
 

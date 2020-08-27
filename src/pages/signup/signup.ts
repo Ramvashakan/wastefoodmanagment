@@ -3,7 +3,7 @@ import { HoteldetailsPage } from './../hoteldetails/hoteldetails';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,AlertController,LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController,LoadingController, Platform } from 'ionic-angular';
 
 import{ AngularFireAuth } from 'angularfire2/auth';
 
@@ -29,9 +29,25 @@ export class SignupPage {
     public AF:AngularFireAuth,
     public AlrtCtrl:AlertController,
     public Loading:LoadingController,
-    public AD: AngularFireDatabase
+    public AD: AngularFireDatabase,
+    private ionicPlatform: Platform
+    
     ){
-      
+         
+    let load =this.Loading.create({
+
+      spinner:'ios',
+      content:'Logout',
+        
+    });
+
+    load.present();
+
+      this.ionicPlatform.ready().then((res)=>{
+
+          load.dismiss();
+
+      });
       
       this.selector = "asramam";
 

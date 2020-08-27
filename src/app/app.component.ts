@@ -3,7 +3,7 @@ import { HotelPage } from './../pages/hotel/hotel';
 
 import { HomePage } from './../pages/home/home';
 import { Component } from '@angular/core';
-import { Platform, AlertController } from 'ionic-angular';
+import { Platform, AlertController, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -20,6 +20,8 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, 
 
     public net:Network,
+    public Loading:LoadingController,
+    private ionicPlatform:Platform,
     public aler: AlertController,
     public AD:AngularFireDatabase,
     public AF: AngularFireAuth,
@@ -30,8 +32,24 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-
     
+       
+    let load =this.Loading.create({
+
+      spinner:'ios',
+      content:'Logout',
+        
+    });
+
+    load.present();
+
+      this.ionicPlatform.ready().then((res)=>{
+
+          load.dismiss();
+
+      });
+
+
     this.net.onDisconnect().subscribe(()=>{
       let alrt = this.aler.create({
  
